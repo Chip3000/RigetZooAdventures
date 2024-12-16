@@ -1,11 +1,16 @@
-﻿<!DOCTYPE html>
+﻿@{
+    // Setting the title for the page dynamically using ViewData
+    ViewData["Title"] = "Support";
+}
+
+<!DOCTYPE html>
 <html lang="en">
 
 <style>
     body {
         font-family: Arial, sans-serif;
         margin: 0;
-        background-color: #f4f4f4;
+        background-color: grey;
     }
 
     header {
@@ -19,10 +24,10 @@
     section {
         margin: 20px 0;
         padding: 20px;
-        background: #ffffff;
+        background: white;
         border-radius: 5px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        background-color: #8e604a;
+        background-color: grey;
     }
 
     .support {
@@ -30,8 +35,8 @@
         padding: 10px;
         border: solid;
         border-radius: 5px;
-        background-color: #aab396;
-        border-color: #919581;
+        background-color: lightgrey;
+        border-color: black;
     }
 </style>
 
@@ -44,16 +49,16 @@
     <section>
         <h2>Frequently Asked Questions (FAQs)</h2>
         <div class="support">
-            <strong>Q1: How can I change my account information?</strong>
-            <p>A: To change your account information, click on the "Hello {Username}" in the top right of your screen once you are logged in.</p>
+            <strong>Question</strong>
+            <p>Answer</p>
         </div>
         <div class="support">
-            <strong>Q2: How do I contact customer support?</strong>
-            <p>A: You can reach our customer support team by emailing GibJohnTutoringSupport@fakeemail.com or calling (123) 456-7890.</p>
+            <strong>Question</strong>
+            <p>Answer</p>
         </div>
         <div class="support">
-            <strong>Q3: Where can I contact a tutor privately?</strong>
-            <p>A: To contact a tutor privately, head to the tutors page and find your tutor, then click on their details and you will find their email and phone number to contact them by.</p>
+            <strong>Question</strong>
+            <p>Answer</p>
         </div>
     </section>
 
@@ -65,7 +70,7 @@
         </div>
         <div class="support">
             <ul>
-                <li>Email: <a href="mailto:GibJohnTutoringSupport@fakeemail.com">GibJohnTutoringSupport@fakeemail.com</a></li>
+                <li>Email: <a href="mailto:example@email.com">example@email.com</a></li>
                 <li>Phone: <a href="tel:+11234567890">(123) 456-7890</a></li>
             </ul>
         </div>
