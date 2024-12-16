@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Company Name</title>
+    <!-- Link to Bootstrap CSS for styling -->
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <!-- Link to site-specific CSS -->
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <!-- Link to additional styles for the website -->
+    <link rel="stylesheet" href="~/GibJohnWebsite.styles.css" asp-append-version="true" />
+</head>
+
+<body>
+    <header>
+        <!-- Navigation bar -->
+        <nav id="navbar" class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-color-#8e604a border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <!-- Home link in the navbar -->
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                <!-- Button for toggling the navbar on smaller screens -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <!-- Link to Add Lesson page -->
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                        }
+                    </ul>
+                    <!-- Partial view for login/logout options -->
+                    <partial name="_LoginPartial" />
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            <!-- Render the body of the view -->
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer id="footer" class="border-top footer text-muted">
+        <div class="text-end">
+            <!-- Footer logo -->
+        </div>
+        <p>
+            <!-- Button for getting support -->
+            <a href="~/Home/Support" class="btn btn-primary support-button">Get Support</a>
+        </p>
+        <p>
+            <!-- Copyright text -->
+            &copy; 2024 - CompanyHere
+        </p>
+    </footer>
+    <!-- jQuery library -->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap JavaScript bundle -->
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Site-specific JavaScript -->
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <!-- Render additional scripts if any -->
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
+
+<style>
+    /* Body styles */
+    body {
+        background-color: white; /* Light background color */
+        font-family: cursive; /* Cursive font for body text */
+        margin-bottom: 120px; /* Space at the bottom of the body */
+    }
+
+    /* Footer styles */
+    footer {
+        padding: 10px 20px; /* Padding around footer content */
+        background-color: lightgrey; /* Dark background color for footer */
+        width: 100%; /* Full width for footer */
+        display: flex; /* Flexbox layout for footer */
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center the footer content */
+        position: fixed;
+        bottom: 0;
+    }
+
+    /* Footer content styling */
+    .footer-content {
+        display: flex; /* Flexbox for footer content */
+        align-items: center; /* Align items vertically centered */
+        justify-content: space-between; /* Space between items */
+        width: 100%; /* Full width for footer content */
+        max-width: 1200px; /* Limit max width for larger screens */
+        padding: 0 10px; /* Padding for smaller screens */
+    }
+
+    /* Paragraph styling in footer */
+    footer > p {
+        margin: 5px; /* Margin around the paragraph */
+        margin-bottom: 15px; /* Additional margin at the bottom */
+        padding: 2px; /* Padding inside the paragraph */
+        line-height: 0; /* Sets line height to 0, which may cause overlapping */
+        color: black; /* Text color for the paragraph */
+        align-self: flex-end; /* Aligns the copyright text to the bottom of the footer */
+    }
+
+        /* Styling for the anchor tag inside footer paragraphs */
+        footer > p > a {
+            background-color: lightgrey !important; /* Background color for the button */
+            border-color: black !important; /* Border color for the button */
+            border-width: 4px !important; /* Border width for the button */
+            border-style: solid !important; /* Solid border style for the button */
+            padding: 10px 15px; /* Padding inside the button */
+            color: black !important; /* Text color for the button */
+            position: relative; /* Set position to relative to allow z-index to work */
+            z-index: 2; /* Higher z-index to ensure the button is above the logo */
+        }
+
+    /* Hover effect for the anchor tag inside footer paragraphs */
+    footer > div > a:hover {
+        transition: 1s ease-in !important; /* Transition effect on hover */
+        background-color: grey !important; /* Change background color on hover */
+        color: white !important; /* Change text color on hover */
+    }
+
+    /* Navbar styling */
+    #navbar {
+        background-color: lightgrey
+    }
+
+    @@media (max-width: 380px) {
+        .footer-logo {
+            scale: 0;
+        }
+    }
+</style>
