@@ -29,13 +29,15 @@ namespace GibJohnWebsite.Areas.Identity.Pages.Account
         private readonly IUserEmailStore<IdentityUser> _emailStore;
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
+        private readonly RoleManager<IdentityRole> _roleManager;
 
         public RegisterModel(
             UserManager<IdentityUser> userManager,
             IUserStore<IdentityUser> userStore,
             SignInManager<IdentityUser> signInManager,
             ILogger<RegisterModel> logger,
-            IEmailSender emailSender)
+            IEmailSender emailSender,
+            RoleManager<IdentityRole> roleManager) // Inject RoleManager
         {
             _userManager = userManager;
             _userStore = userStore;
@@ -43,6 +45,7 @@ namespace GibJohnWebsite.Areas.Identity.Pages.Account
             _signInManager = signInManager;
             _logger = logger;
             _emailSender = emailSender;
+            _roleManager = roleManager; // Initialize RoleManager
         }
 
         /// <summary>
@@ -120,15 +123,23 @@ namespace GibJohnWebsite.Areas.Identity.Pages.Account
 
                 if (result.Succeeded)
                 {
-                    _logger.LogInformation("User created a new account with password.");
+                    _logger.LogInformation("User  created a new account with password.");
 
-                    var userId = await _userManager.GetUserIdAsync(user);
+                    // Check if the "User " role exists, and create it if it doesn't
+                    if (!await _roleManager.RoleExistsAsync("User "))
+                    {
+                        await _roleManager.CreateAsync(new IdentityRole("User "));
+                    }
+
+                    // Assign the "User " role to the newly created user
+                    await _userManager.AddToRoleAsync(user, "User ");
+
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                     code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
                     var callbackUrl = Url.Page(
                         "/Account/ConfirmEmail",
                         pageHandler: null,
-                        values: new { area = "Identity", userId = userId, code = code, returnUrl = returnUrl },
+                        values: new { area = "Identity", userId = user.Id, code = code, returnUrl = returnUrl },
                         protocol: Request.Scheme);
 
                     await _emailSender.SendEmailAsync(Input.Email, "Confirm your email",
