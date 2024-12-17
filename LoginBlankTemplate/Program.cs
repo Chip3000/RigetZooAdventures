@@ -70,3 +70,10 @@ async Task SeedRoles(IServiceProvider serviceProvider)
         }
     }
 }
+
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllerRoute(
+        name: "default",
+        pattern: "{controller=Home}/{action=Index}/{id?}");
+});

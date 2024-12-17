@@ -26,9 +26,23 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <!-- Link to Add Lesson page -->
                         @if (User.Identity.IsAuthenticated)
                         {
+                        }
+                    </ul>
+                    <ul class="navbar-nav ms-auto">
+                        <!-- Add ms-auto here -->
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="adminDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Admin
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="adminDropdown">
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="UserRoles" asp-action="Index">Manage Users</a></li>
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="RoleManager" asp-action="Index">Manage Roles</a></li>
+                                </ul>
+                            </li>
                         }
                     </ul>
                     <!-- Partial view for login/logout options -->
