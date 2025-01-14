@@ -23,6 +23,11 @@ namespace LoginBlankTemplate.Controllers
             return View();
         }
 
+        public IActionResult AboutHotel()
+        {
+            return View();
+        }
+
         public IActionResult Support()
         {
             return View();
