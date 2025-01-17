@@ -7,35 +7,38 @@
 }
 
 <body>
-    <!-- Row for the banner image -->
-    <div class="row justify-content-center">
-        <div class="col-md-12 mb-4 text-center">
-            <!-- Banner image with center alignment -->
-            <img src="https://placehold.co/760x254" class="img-fluid rounded-banner" alt="Placeholder image" style="display: block; margin: 0 auto;"> <!-- Added style for block and margin -->
+    <!-- Background box -->
+    <div class="background-box">
+        <!-- Row for the banner image -->
+        <div class="row justify-content-center">
+            <div class="col-md-12 mb-4 text-center">
+                <!-- Banner image with center alignment -->
+                <img src="https://i.imgur.com/jfFQd1c.png" class="img-fluid rounded-banner" alt="Zoo Themed Banner Image Saying Riget Zoo Adventures" style="display: block; margin: 0 auto; width: 50%; border: solid;">
+            </div>
         </div>
-    </div>
 
-    <!-- Row for the About Us section -->
-    <div class="row justify-content-center">
-        <div id="box" class="col-md-6 mb-4">
-            <section id="rounded-box2" class="p-4 shadow-sm bg-#8e604a">
-                <div class="header-box">
-                    <h2>Go To Our Zoo!</h2>
-                </div>
-                <div id="proceed-btn" class="d-flex justify-content-center mt-4">
-                    <a href="Home/AboutZoo" class="custom-button">Visit Now!</a>
-                </div>
-            </section>
-        </div>
-        <div id="box" class="col-md-6 mb-4">
-            <section id="rounded-box2" class="p-4 shadow-sm bg-#8e604a">
-                <div class="header-box">
-                    <h2>Go To Our Hotel!</h2>
-                </div>
-                <div id="proceed-btn" class="d-flex justify-content-center mt-4">
-                    <a href="Home/AboutHotel" class="custom-button">Visit Now!</a>
-                </div>
-            </section>
+        <!-- Row for the About Us section -->
+        <div class="row justify-content-center">
+            <div id="box" class="col-md-6 mb-4">
+                <section id="rounded-box1" class="p-4 shadow-sm">
+                    <div class="header-box">
+                        <h2>Go To Our Zoo!</h2>
+                    </div>
+                    <div id="proceed-btn" class="d-flex justify-content-center mt-4">
+                        <a href="Home/AboutZoo" class="custom-button">Visit Now!</a>
+                    </div>
+                </section>
+            </div>
+            <div id="box" class="col-md-6 mb-4">
+                <section id="rounded-box2" class="p-4 shadow-sm">
+                    <div class="header-box">
+                        <h2>Go To Our Hotel!</h2>
+                    </div>
+                    <div id="proceed-btn" class="d-flex justify-content-center mt-4">
+                        <a href="Home/AboutHotel" class="custom-button">Visit Now!</a>
+                    </div>
+                </section>
+            </div>
         </div>
     </div>
 </body>
@@ -44,8 +47,17 @@
     /*
             Sets style for boxes on the home page
         */
+    .background-box {
+        background-color: #76a56a; /* Colours the background */
+        background-position: center; /* Center the image */
+        background-repeat: no-repeat; /* Prevent the image from repeating */
+        border: solid;
+        border-radius: 20px; /* Rounds the corners of the box */
+        padding: 20px; /* Padding around the content */
+    }
+
     #rounded-box1 {
-        background-image: url('https://media.istockphoto.com/id/474690025/photo/children-at-zoo-feeding-giraffe.jpg?s=612x612&w=0&k=20&c=pAswjPrUAelDOscYpbZE0yePHiREBYwqSB7quGBvg68='); /* Replace with your image path */
+        background-image: url('https://media.istockphoto.com/id/474690025/photo/children-at-zoo-feeding-giraffe.jpg?s=612x612&w=0&k=20&c=pAswjPrUAelDOscYpbZE0yePHiREBYwqSB7quGBvg68=');
         background-size: cover; /* Cover the entire box */
         background-position: center; /* Center the image */
         background-repeat: no-repeat; /* Prevent the image from repeating */
