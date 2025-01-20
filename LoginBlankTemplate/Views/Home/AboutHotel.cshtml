@@ -1,6 +1,6 @@
 ﻿@{
     // Setting the title for the page dynamically using ViewData
-    ViewData["Title"] = "About Hotel";
+    ViewData["Title"] = "About Zoo";
 }
 
 <body>
@@ -8,7 +8,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12 mb-4 text-center">
             <!-- Banner image with center alignment -->
-            <img src="https://placehold.co/760x254" class="img-fluid rounded-banner" alt="Placeholder image" style="display: block; margin: 0 auto;"> <!-- Added style for block and margin -->
+            <img src="https://i.imgur.com/PQmmPsu.png" class="img-fluid rounded-banner" alt="Placeholder image" style="display: block; margin: 0 auto;">
         </div>
     </div>
 
@@ -16,49 +16,37 @@
     <div class="row justify-content-center">
         <div class="col-md-6 mb-4">
             <section id="rounded-box" class="p-4 shadow-sm bg-#8e604a">
-                <h2>Title here</h2>
-                <p>Text here</p>
+                <h2>About Us</h2>
+                <p>
+                    Riget Zoo Adventures is your gateway to the wonders of wildlife! Located across multiple facilities across the UK, our zoo is home to over 30 species, offering an unforgettable experience for animal lovers of all ages.
+
+                    Since 2003, we have been dedicated to providing a safe and enriching environment for our animals while promoting conservation and education. Explore our interactive exhibits, enjoy daily animal encounters, and learn about the importance of protecting our planet's biodiversity.
+
+                    Join us for a day of adventure and discovery at Riget Zoo Adventures.
+                </p>
             </section>
         </div>
         <div class="col-md-6 mb-4">
             <section id="rounded-box" class="p-4 shadow-sm bg-#8e604a">
-                <p>Text here</p>
+                <p>There are a number of different facilities you can expect at one of our hotels, including:</p>
+                <ul>
+                    <li>Public Sauna</li>
+                    <li>Public Pool</li>
+                    <li>Private Aqaurium</li>
+                    <li>Private On-Suite</li>
+                    <li>Basic Cooking Equipment</li>
+                    <li>Public Gym</li>
+                </ul>
+                <p>Our Hotels are designed to accommodate everyone in which we did so by ensuring all basic necessities are provided.</p>
             </section>
         </div>
     </div>
 
-    <!-- Row for the Our Courses section -->
     <div class="row justify-content-center mt-4">
         <div class="col-md-6 mb-4">
             <section id="rounded-box" class="p-4 shadow-sm bg-#8e604a">
-                <h2>Title Here</h2>
-                <p>List Information</p>
-                <ul>
-                    <li>Lists</li>
-                    <li>Items</li>
-                    <li>Here</li>
-                </ul>
-            </section>
-        </div>
-        <div class="col-md-6 mb-4">
-            <section id="rounded-box" class="p-4 shadow-sm bg-#8e604a">
-                <h2>Title here</h2>
-                <p>List information</p>
-                <ul>
-                    <li>List</li>
-                    <li>Items</li>
-                    <li>Here</li>
-                </ul>
-            </section>
-        </div>
-    </div>
-
-    <!-- Row for the Testimonials section -->
-    <div class="row justify-content-center mt-4">
-        <div class="col-md-6 mb-4">
-            <section id="rounded-box" class="p-4 shadow-sm bg-#8e604a">
-                <h2>Title here</h2>
-                <p>Text Here</p>
+                <p>Have that well needed sleep. Book to stay at one of our hotels now!</p>
+                <a href="Home/Support" class="custom-button">Book Now!</a>
             </section>
         </div>
     </div>
@@ -66,19 +54,22 @@
 
 
 <style>
-    /*
-                    Sets style for boxes on the home page
-                */
+    body{
+        background-image: url("https://i.imgur.com/HvQtylH.jpeg") !important;
+        background-size: cover; /* Cover the entire box */
+        background-position: center; /* Center the image */
+        background-repeat: no-repeat; /* Prevent the image from repeating */
+    }
+
     #rounded-box {
+        border: solid; /* Gives the border a physical boundary */
+        border-color: #4440CF;
         border-radius: 20px; /* Rounds the corners of the box */
-        background-color: lightgrey; /* Background color for the box */
+        background-color: #6c68d9; /* Background color for the box */
         padding: 20px; /* Padding inside the box */
         font-size: 20px; /* Font size for text inside the box */
     }
 
-    /*
-                    Centers the welcome message
-                */
     h1 {
         text-align: center; /* Centers the text horizontally */
     }
@@ -93,10 +84,22 @@
     }
 
     .rounded-banner {
+        border: solid; /* Gives the border a physical boundary */
+        border-color: #4440CF;
         border-radius: 5%; /* Rounds the corners of the banner image */
         object-fit: cover; /* Ensures the image covers the area without distortion */
         margin-left: 4%; /* Adds left margin for positioning */
         max-width: auto; /* Allows the image to scale automatically */
         height: auto; /* Maintains the aspect ratio of the image */
+    }
+
+    .custom-button {
+        background-color: #4440CF; /* Background color */
+        color: black; /* Text color */
+        padding: 10px; /* Padding */
+        text-decoration: none; /* Remove underline */
+        border-radius: 5px; /* Rounded corners */
+        display: inline-block; /* Make it behave like a button */
+        transition: background-color 0.3s; /* Smooth transition for hover effect */
     }
 </style>
