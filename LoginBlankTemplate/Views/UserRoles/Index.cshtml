@@ -18,13 +18,25 @@
         @foreach (var user in Model)
         {
             <tr>
-                <td>@user.UserName</td>
-                <td>@user.Email</td>
-                <td>@string.Join(" , ", user.Roles.ToList())</td>
-                <td>
+                <td class="table-cell-bg">@user.UserName</td>
+                <td class="table-cell-bg">@user.Email</td>
+                <td class="table-cell-bg">@string.Join(" , ", user.Roles.ToList())</td>
+                <td class="table-cell-bg">
                     <a class="btn btn-primary" asp-controller="UserRoles" asp-action="Manage" asp-route-userId="@user.UserId">Manage Roles</a>
                 </td>
             </tr>
         }
     </tbody>
 </table>
+
+<style>
+    .table-cell-bg {
+        background-color: #76a56a !important;
+        border: #5E8953 solid;
+    }
+
+        .table-cell-bg > a {
+                background-color: #8e604a;
+                border: 2px black;
+        }
+</style>
