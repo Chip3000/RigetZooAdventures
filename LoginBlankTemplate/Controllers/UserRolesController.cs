@@ -16,7 +16,6 @@ namespace LoginBlankTemplate.Controllers
             _roleManager = roleManager;
             _userManager = userManager;
         }
-        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Index()
         {
             var users = await _userManager.Users.ToListAsync();
@@ -32,7 +31,7 @@ namespace LoginBlankTemplate.Controllers
             }
             return View(userRolesViewModel);
         }
-        [Authorize(Roles = "Admin")]
+        
         private async Task<List<string>> GetUserRoles(IdentityUser user)
         {
             return new List<string>(await _userManager.GetRolesAsync(user));
@@ -68,7 +67,7 @@ namespace LoginBlankTemplate.Controllers
             }
             return View(model);
         }
-        [Authorize(Roles = "Admin")]
+        
         [HttpPost]
         public async Task<IActionResult> Manage(List<ManageUserRolesViewModel> model, string userId)
         {

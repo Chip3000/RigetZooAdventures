@@ -12,13 +12,11 @@ namespace LoginBlankTemplate.Controllers
         {
             _roleManager = roleManager;
         }
-        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Index()
         {
             var roles = await _roleManager.Roles.ToListAsync();
             return View(roles);
         }
-        [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> AddRole(string roleName)
         {
@@ -28,7 +26,6 @@ namespace LoginBlankTemplate.Controllers
             }
             return RedirectToAction("Index");
         }
-        [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> DeleteRole(string roleId)
         {
