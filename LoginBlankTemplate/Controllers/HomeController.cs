@@ -28,6 +28,11 @@ namespace LoginBlankTemplate.Controllers
             return View();
         }
 
+        public IActionResult ZooTickets()
+        {
+            return View();
+        }
+
         public IActionResult Support()
         {
             return View();
