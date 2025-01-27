@@ -10,5 +10,6 @@ namespace LoginBlankTemplate.Data
             : base(options)
         {
         }
+        public DbSet<LoginBlankTemplate.Models.Tickets> Tickets { get; set; } = default!;
     }
 }
