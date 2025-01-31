@@ -1,0 +1,63 @@
+﻿@model LoginBlankTemplate.Models.Bookings
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Bookings</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.RoomType)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.RoomType)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.From)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.From)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Until)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Until)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
+
+<style>
+    body {
+        background-image: url("https://i.imgur.com/HvQtylH.jpeg") !important;
+        background-size: cover; /* Cover the entire box */
+        background-position: center; /* Center the image */
+        background-repeat: no-repeat; /* Prevent the image from repeating */
+    }
+
+    #footer {
+        background-color: #6c68d9;
+    }
+
+    #navbar {
+        background-color: #6c68d9 !important;
+    }
+
+    #footer > p > a {
+        background-color: #4440CF !important; /* Background color for the button */
+    }
+</style>

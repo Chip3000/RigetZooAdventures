@@ -1,7 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
-
 #nullable disable
-
 namespace LoginBlankTemplate.Data.Migrations
 {
     /// <inheritdoc />
@@ -18,7 +16,6 @@ namespace LoginBlankTemplate.Data.Migrations
                 oldClrType: typeof(int),
                 oldType: "int");
         }
-
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {

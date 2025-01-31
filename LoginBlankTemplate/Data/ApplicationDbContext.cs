@@ -11,5 +11,6 @@ namespace LoginBlankTemplate.Data
         {
         }
         public DbSet<LoginBlankTemplate.Models.Tickets> Tickets { get; set; } = default!;
+        public DbSet<LoginBlankTemplate.Models.Bookings> Bookings { get; set; } = default!;
     }
 }

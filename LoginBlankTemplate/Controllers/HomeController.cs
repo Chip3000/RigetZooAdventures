@@ -32,6 +32,10 @@ namespace LoginBlankTemplate.Controllers
         {
             return View();
         }
+        public IActionResult HotelBookings()
+        {
+            return View();
+        }
 
         public IActionResult Support()
         {
