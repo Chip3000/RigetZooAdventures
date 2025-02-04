@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LoginBlankTemplate.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250131103608_Bookings")]
+    [Migration("20250204103139_Bookings")]
     partial class Bookings
     {
         /// <inheritdoc />
