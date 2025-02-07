@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using LoginBlankTemplate.Data;
 using LoginBlankTemplate.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace LoginBlankTemplate.Controllers
 {
@@ -19,12 +20,14 @@ namespace LoginBlankTemplate.Controllers
             _context = context;
         }
 
+        [Authorize]
         // GET: Tickets
         public async Task<IActionResult> Index()
         {
             return View(await _context.Tickets.ToListAsync());
         }
 
+        [Authorize]
         // GET: Tickets/Details/5
         public async Task<IActionResult> Details(string id)
         {
@@ -44,7 +47,7 @@ namespace LoginBlankTemplate.Controllers
         }
 
 
-
+        [Authorize]
         // GET: Tickets/Create
         public IActionResult Create(string ticketType)
         {
@@ -56,6 +59,7 @@ namespace LoginBlankTemplate.Controllers
             return View(ticket);
         }
 
+        [Authorize]
         // POST: Tickets/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -71,6 +75,7 @@ namespace LoginBlankTemplate.Controllers
             return View(tickets);
         }
 
+        [Authorize]
         // GET: Tickets/Edit/5
         public async Task<IActionResult> Edit(string id)
         {
@@ -87,6 +92,7 @@ namespace LoginBlankTemplate.Controllers
             return View(tickets);
         }
 
+        [Authorize]
         // POST: Tickets/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -122,6 +128,7 @@ namespace LoginBlankTemplate.Controllers
             return View(tickets);
         }
 
+        [Authorize]
         // GET: Tickets/Delete/5
         public async Task<IActionResult> Delete(string id)
         {
@@ -140,6 +147,7 @@ namespace LoginBlankTemplate.Controllers
             return View(tickets);
         }
 
+        [Authorize]
         // POST: Tickets/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]

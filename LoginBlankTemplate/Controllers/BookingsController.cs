@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using LoginBlankTemplate.Data;
 using LoginBlankTemplate.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace LoginBlankTemplate.Controllers
 {
@@ -20,11 +21,13 @@ namespace LoginBlankTemplate.Controllers
         }
 
         // GET: Bookings
+        [Authorize]
         public async Task<IActionResult> Index()
         {
             return View(await _context.Bookings.ToListAsync());
         }
 
+        [Authorize]
         // GET: Bookings/Details/5
         public async Task<IActionResult> Details(string id)
         {
@@ -43,12 +46,14 @@ namespace LoginBlankTemplate.Controllers
             return View(bookings);
         }
 
+        [Authorize]
         // GET: Bookings/Create
         public IActionResult Create()
         {
             return View();
         }
 
+        [Authorize]
         // POST: Bookings/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -65,6 +70,7 @@ namespace LoginBlankTemplate.Controllers
             return View(bookings);
         }
 
+        [Authorize]
         // GET: Bookings/Edit/5
         public async Task<IActionResult> Edit(string id)
         {
@@ -81,6 +87,7 @@ namespace LoginBlankTemplate.Controllers
             return View(bookings);
         }
 
+        [Authorize]
         // POST: Bookings/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -116,6 +123,7 @@ namespace LoginBlankTemplate.Controllers
             return View(bookings);
         }
 
+        [Authorize]
         // GET: Bookings/Delete/5
         public async Task<IActionResult> Delete(string id)
         {
@@ -134,6 +142,7 @@ namespace LoginBlankTemplate.Controllers
             return View(bookings);
         }
 
+        [Authorize]
         // POST: Bookings/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
